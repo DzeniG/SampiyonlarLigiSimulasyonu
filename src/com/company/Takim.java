@@ -27,6 +27,8 @@ public class Takim implements Serializable{
         this.averaj = 0.0f;
 
     }
+
+
     public String toString() {
 
         return this.isim;

@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.*;
 
 public class Grup {
 
@@ -30,69 +31,39 @@ public class Grup {
         this.takim2 = takim2;
         this.takim3 = takim3;
         this.takim4 = takim4;
-        takimlar.add(takim1);
-        takimlar.add(takim2);
-        takimlar.add(takim3);
-        takimlar.add(takim4);
 
     }
 
-    public void grupbirinciveikincisininibul() {
-        /*this.grupbirincisi = this.takimlar.get(0);
 
-        for (int i = 1; i<this.takimlar.size(); i++){
-            if (this.grupbirincisi.takimpuan < this.takimlar.get(i).takimpuan){
-                this.grupbirincisi = this.takimlar.get(i);
+    public void grupbirinciveikincisininibul() {
+
+
+        this.takimlar.add(takim1);
+        this.takimlar.add(takim2);
+        this.takimlar.add(takim3);
+        this.takimlar.add(takim4);
+
+        this.grupbirincisi = takimlar.get(0);
+
+        for (Takim t : takimlar){
+            if (this.grupbirincisi.takimpuan < t.takimpuan){
+                this.grupbirincisi = t;
             }
         }
 
-        for (int i = 0; i<this.takimlar.size(); i++){
-            if (this.grupbirincisi.takimpuan == this.takimlar.get(i).takimpuan){
-                this.takimlar.remove(i);
+        for (Takim t : takimlar){
+            if (this.grupbirincisi.takimpuan == t.takimpuan){
+                this.takimlar.remove(t);
                 break;
             }
         }
 
-        this.grupikincisi = this.takimlar.get(0);
-        for (int i = 1; i<this.takimlar.size(); i++){
-            if (this.grupikincisi.takimpuan < this.takimlar.get(i).takimpuan){
-                this.grupikincisi = this.takimlar.get(i);
+        this.grupikincisi = takimlar.get(0);
+        for (Takim t : takimlar){
+            if (this.grupikincisi.takimpuan < t.takimpuan){
+                this.grupikincisi = t;
             }
         }
-        */
-
-        this.grupbirincisi = this.takim1;
-        this.grupikincisi = this.takim2;
-
-         if (this.grupbirincisi.takimpuan < this.takim2.takimpuan) {
-                this.grupikincisi = this.takim1;
-                this.grupbirincisi = this.takim2;
-         }
-         else if (this.grupbirincisi.takimpuan == this.takim2.takimpuan) {
-             this.grupikincisi = this.takim2;
-         }
-
-         if (this.grupbirincisi.takimpuan < this.takim3.takimpuan) {
-                this.grupbirincisi = this.takim3;
-         }
-         else if (this.grupbirincisi.takimpuan == this.takim3.takimpuan) {
-            this.grupikincisi = this.takim3;
-         }
-         if (this.grupbirincisi.takimpuan < this.takim4.takimpuan) {
-                this.grupbirincisi = this.takim4;
-         }
-         else if (this.grupbirincisi.takimpuan == this.takim4.takimpuan) {
-             this.grupikincisi = this.takim4;
-         }
-         if (this.grupikincisi.takimpuan < this.takim2.takimpuan) {
-                this.grupikincisi = this.takim2;
-         }
-         if (this.grupikincisi.takimpuan < this.takim3.takimpuan) {
-                this.grupikincisi = this.takim3;
-         }
-         if (this.grupikincisi.takimpuan < this.takim4.takimpuan) {
-            this.grupikincisi = this.takim4;
-         }
 
         if (this.grupbirincisi.takimpuan == this.grupikincisi.takimpuan){
             this.grupbirincisi.averaj = this.grupbirincisi.takimaclaritotalgol / this.grupbirincisi.takimtotalgol;
